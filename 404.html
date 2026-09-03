@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bee Home Creators</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // If someone accesses /repo/project/id directly, redirect to /repo/#/project/id
+      var pathSegments = window.location.pathname.split('/');
+      var repoIndex = 1; // Assuming username.github.io/repo-name/
+      var routePath = window.location.pathname;
+      var match = routePath.match(/\/project\/[a-zA-Z0-9_-]+/);
+      if (match) {
+        var base = window.location.pathname.substring(0, match.index);
+        window.location.replace(base + '/#' + match[0]);
+      } else {
+        window.location.replace('./');
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Bee Home Creators...</p>
+  </body>
+</html>
